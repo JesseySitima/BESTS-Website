@@ -67,6 +67,7 @@ async function loadAllComponents() {
     { id: "hero-container", path: "../../components/hero.html" },
     { id: "mission-container", path: "../../components/mission.html" },
     { id: "expertise-container", path: "../../components/expertise.html" },
+    { id: "about-container", path: "../../components/about.html" },
     {
       id: "testimonials-container",
       path: "../../components/testimonials.html",
@@ -141,6 +142,7 @@ function updateActiveNavOnScroll() {
   const sections = [
     "home",
     "mission",
+    "about",
     "expertise",
     "testimonials",
     "partners",
@@ -185,21 +187,21 @@ function initBookingModal() {
 
   // OPEN (global function so HTML can call it)
   window.openBookingModal = (type = "spirometry") => {
-  const modal = document.getElementById("bookingModal");
-  const select = document.getElementById("serviceType");
-  const title = document.getElementById("bookingTitle");
+    const modal = document.getElementById("bookingModal");
+    const select = document.getElementById("serviceType");
+    const title = document.getElementById("bookingTitle");
 
-  modal.classList.remove("hidden");
-  modal.classList.add("flex");
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
 
-  if (type === "consultation") {
-    if (title) title.textContent = "Book a Consultation";
-    if (select) select.value = "consultation";
-  } else {
-    if (title) title.textContent = "Book a Spirometry Test";
-    if (select) select.value = "spirometry";
-  }
-};
+    if (type === "consultation") {
+      if (title) title.textContent = "Book a Consultation";
+      if (select) select.value = "consultation";
+    } else {
+      if (title) title.textContent = "Book a Spirometry Test";
+      if (select) select.value = "spirometry";
+    }
+  };
 
   window.closeBookingModal = () => {
     modal.classList.add("hidden");
