@@ -1,0 +1,142 @@
+<section
+  id="home"
+  class="relative min-h-screen flex items-center pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden theme-hero-bg scroll-animate"
+>
+  <!-- BACKGROUND IMAGE -->
+  <div
+    class="absolute inset-0 w-full h-full opacity-30 bg-[url('https://images.pexels.com/photos/3957987/pexels-photo-3957987.jpeg?auto=compress&cs=tinysrgb&w=800')] bg-cover bg-center mix-blend-overlay"
+  ></div>
+
+  <div class="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
+    <div class="flex flex-col lg:flex-row gap-12 items-center">
+      <!-- IMAGE SIDE -->
+      <div class="flex-1 relative order-1 lg:order-2">
+        <!-- MOBILE -->
+        <div class="block lg:hidden relative">
+          <img
+            src="assets/images/bests-logo.png"
+            alt="Bests Logo"
+            class="w-2/3 sm:w-1/2 mx-auto object-cover"
+            onerror="this.src = 'https://placehold.co/400x400?text=BESTS+Logo'"
+          />
+
+          <div
+            class="absolute -top-3 left-1/2 -translate-x-1/2 rotate-[-10deg] animate-bounce"
+          >
+            <div
+              class="inline-flex items-center gap-1 theme-badge-mobile backdrop-blur-md rounded-full px-3 py-1 text-california-gold text-[10px] font-semibold shadow-md border border-california-gold/30 whitespace-nowrap"
+            >
+              <i class="fas fa-lungs text-california-gold text-[10px]"></i>
+              <span>Malawi's #1 Experts</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DESKTOP -->
+        <div
+          class="hidden lg:block relative z-10 floating-icon-mob mx-auto w-[260px] xl:w-[320px]"
+        >
+          <div
+            class="theme-logo-container rounded-3xl p-3 shadow-2xl border border-california-gold/30 relative"
+          >
+            <div
+              class="absolute -top-6 left-1/2 -translate-x-1/2 rotate-[-12deg] animate-bounce"
+            >
+              <div
+                class="inline-flex items-center gap-2 theme-badge backdrop-blur-md rounded-full px-4 py-1.5 text-california-gold text-xs font-semibold shadow-lg border border-california-gold/30 whitespace-nowrap"
+              >
+                <i class="fas fa-lungs text-california-gold text-xs"></i>
+                <span>Gold-standard Spirometry · Malawi's #1 Experts</span>
+              </div>
+            </div>
+
+            <img
+              src="assets/images/bests-logo.png"
+              alt="Bests Logo"
+              class="rounded-2xl shadow-xl w-[260px] xl:w-[320px] object-cover mx-auto"
+              onerror="
+                this.src = 'https://placehold.co/400x400?text=BESTS+Logo'
+              "
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- TEXT SIDE -->
+      <div class="flex-1 text-center lg:text-left order-2 lg:order-1">
+        <h1
+          class="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.15] tracking-tight"
+        >
+          <span class="text-dark-green">Lung</span>
+          <span class="theme-hero-title">Function</span>
+          <br />
+          <span class="text-california-gold">Experts.</span>
+        </h1>
+
+        <!-- FIXED PARAGRAPH -->
+        <p
+          class="text-base md:text-lg theme-hero-subtitle mt-4 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+        >
+          <span class="font-semibold">
+            Your trusted partner for accurate and reliable lung function testing
+            results.
+          </span>
+        </p>
+
+        <!-- BUTTONS -->
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-8"
+        >
+          <a
+            href="#connect"
+            class="bg-california-gold hover:bg-california-gold-dark text-black px-7 py-3.5 rounded-full font-semibold shadow-xl flex items-center justify-center gap-2 transition-all duration-300 btn-modern"
+          >
+            <i class="fas fa-calendar-check"></i> Schedule consultation
+          </a>
+
+          <a
+            href="#expertise"
+            class="border-2 border-california-gold/50 hover:border-california-gold theme-secondary-btn px-7 py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 transition-all duration-300"
+          >
+            <i class="fas fa-microscope"></i> Explore science
+          </a>
+        </div>
+
+        <!-- STATS (clean row) -->
+        <div
+          class="flex flex-row items-center justify-center lg:justify-start gap-10 mt-12"
+        >
+          <div class="text-center lg:text-left">
+            <span class="text-3xl md:text-4xl font-black text-california-gold"
+              >100%</span
+            >
+            <p class="theme-stat-label text-sm">ATS/ERS 2022</p>
+          </div>
+
+          <div class="w-px h-10 bg-california-gold/30"></div>
+
+          <div class="text-center lg:text-left">
+            <span class="text-3xl md:text-4xl font-black text-california-gold"
+              >24/7</span
+            >
+            <p class="theme-stat-label text-sm">Expert Support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WAVE -->
+  <div class="absolute bottom-0 w-full opacity-80">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 80"
+      class="w-full theme-wave"
+    >
+      <path
+        fill="#0a2e24"
+        d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+      ></path>
+    </svg>
+  </div>
+</section>

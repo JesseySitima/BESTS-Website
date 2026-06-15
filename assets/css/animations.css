@@ -1,0 +1,82 @@
+/* assets/css/animations.css */
+@keyframes float-icon {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating-icon-mob {
+  animation: float-icon 5s ease-in-out infinite;
+}
+
+.hero-title {
+  background: linear-gradient(to right, #1f2937, #065f46);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: fadeSlideUp 0.8s ease-out;
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+/* assets/css/animations.css - Update section-title */
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #f0b90b, #d4a000);
+  border-radius: 3px;
+}
+
+@media (min-width: 1024px) {
+  .section-title:after {
+    left: 0;
+    transform: none;
+  }
+}
+
+.service-card-mobile {
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+
+.service-card-mobile:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+}
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: transform, opacity;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+

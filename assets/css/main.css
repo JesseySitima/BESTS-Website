@@ -1,0 +1,248 @@
+/* assets/css/main.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.font-serif-display {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Client Brand Colors */
+:root {
+  --dark-green: #0a2e24;
+  --dark-green-light: #115e46;
+  --california-gold: #f0b90b;
+  --california-gold-dark: #d4a000;
+  --black: #111111;
+  --black-soft: #1a1a1a;
+}
+
+/* Light Mode (default) */
+:root:not(.dark-mode) {
+  --text-primary: #111111;
+  --text-secondary: #4b5563;
+  --text-light: #6b7280;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --card-bg: #ffffff;
+  --border-light: #e5e7eb;
+  --wave-color: #f9fafb;
+}
+
+/* Dark Mode (when .dark-mode class is added to html) */
+.dark-mode {
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --text-light: #d1d5db;
+  --bg-primary: #111111;
+  --bg-secondary: #1a1a1a;
+  --card-bg: #0a2e24;
+  --border-light: #374151;
+  --wave-color: #1a1a1a;
+}
+
+/* Apply theme variables to elements */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Headings and important text - keep dark in light mode */
+h1, h2, h3, h4, .hero-title, .section-title {
+  color: var(--text-primary) !important;
+}
+
+/* Text colors - more specific selectors */
+.text-gray-900, .text-gray-800, .text-gray-700, 
+.text-gray-900\.leading-tight, .text-gray-800\.leading-relaxed {
+  color: var(--text-primary) !important;
+}
+
+.text-gray-600, .text-gray-500, .text-gray-400 {
+  color: var(--text-secondary) !important;
+}
+
+/* White text that should stay white (buttons, etc) */
+.text-white {
+  color: #ffffff !important;
+}
+
+.dark-mode .text-white {
+  color: #ffffff !important;
+}
+
+/* Background colors */
+.bg-white, .bg-gray-50, .bg-gray-50\/80, 
+.bg-gray-50\/90, .bg-white\/95 {
+  background-color: var(--bg-secondary) !important;
+}
+
+.bg-black, .bg-gray-900 {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Dark green backgrounds - text should be white */
+.bg-dark-green,
+.bg-dark-green-light,
+section[id="mission"] {
+  background-color: var(--dark-green) !important;
+}
+
+/* Force ALL text inside dark sections/cards to stay readable */
+.bg-dark-green h1,
+.bg-dark-green h2,
+.bg-dark-green h3,
+.bg-dark-green h4,
+.bg-dark-green p,
+.bg-dark-green li,
+.bg-dark-green span,
+.bg-dark-green .text-gray-400,
+.bg-dark-green .text-gray-500,
+.bg-dark-green .text-gray-600,
+.bg-dark-green .text-white {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Gold text should remain gold */
+.bg-dark-green .text-california-gold {
+  color: var(--california-gold) !important;
+}
+
+/* Card backgrounds */
+.card-dark, .bg-dark-green.rounded-3xl {
+  background-color: var(--card-bg) !important;
+}
+
+/* Border colors */
+.border-gray-100, .border-gray-200, .border-gray-300,
+.border-gray-100\.border, .border-gray-200\.border {
+  border-color: var(--border-light) !important;
+}
+
+/* Form input backgrounds */
+input, textarea {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-light) !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text-secondary) !important;
+}
+
+/* Partner card backgrounds */
+.bg-white.p-8.rounded-3xl {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Contact card backgrounds */
+.contact-card {
+  background-color: var(--bg-secondary) !important;
+}
+
+.contact-card:hover {
+  background-color: rgba(240, 185, 11, 0.1) !important;
+}
+
+/* Hero section specific - ensure text is visible */
+#home .hero-title {
+  color: var(--text-primary) !important;
+}
+
+#home .text-gray-600 {
+  color: var(--text-secondary) !important;
+}
+
+/* Mission section - always white text */
+#mission h2, #mission p, #mission i {
+  color: #ffffff !important;
+}
+
+/* Gradient text - works in both modes */
+.gradient-hero-text {
+  background: linear-gradient(135deg, var(--dark-green) 0%, var(--california-gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
+.dark-mode .gradient-hero-text {
+  background: linear-gradient(135deg, var(--california-gold) 0%, #ffd700 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
+/* Utility Classes for Client Colors */
+.bg-dark-green {
+  background-color: var(--dark-green);
+}
+.bg-dark-green-light {
+  background-color: var(--dark-green-light);
+}
+.bg-california-gold {
+  background-color: var(--california-gold);
+}
+.bg-california-gold-dark {
+  background-color: var(--california-gold-dark);
+}
+.text-california-gold {
+  color: var(--california-gold);
+}
+.text-dark-green {
+  color: var(--dark-green);
+}
+.border-california-gold {
+  border-color: var(--california-gold);
+}
+.border-dark-green {
+  border-color: var(--dark-green);
+}
+
+.glass-nav-mobile {
+  background: rgba(10, 46, 36, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@media (max-width: 640px) {
+  .service-card-mobile {
+    margin: 0 4px;
+  }
+}
+
+html {
+  scroll-padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+}
+
+/* Expertise section fixes */
+#expertise {
+  background-color: var(--bg-primary) !important;
+}
+
+#expertise .section-title {
+  color: var(--text-primary) !important;
+}
+
+#expertise > div > div:first-child p {
+  color: var(--text-secondary) !important;
+}

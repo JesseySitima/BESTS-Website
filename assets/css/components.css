@@ -1,0 +1,451 @@
+/* assets/css/components.css */
+.btn-modern {
+  transition: all 0.25s ease;
+  transform: translateY(0);
+}
+
+.btn-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -8px rgba(240, 185, 11, 0.4);
+}
+
+/* New gold button style */
+.btn-gold {
+  background: linear-gradient(135deg, #f0b90b 0%, #d4a000 100%);
+  color: #111111;
+  font-weight: 700;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #d4a000 0%, #b8920a 100%);
+  transform: translateY(-2px);
+}
+
+/* Dark card style */
+.card-dark {
+  background-color: var(--dark-green) !important;
+  color: #ffffff !important;
+}
+
+.card-dark h1,
+.card-dark h2,
+.card-dark h3,
+.card-dark h4 {
+  color: #ffffff !important;
+}
+
+.card-dark p,
+.card-dark li,
+.card-dark ul {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.card-dark strong,
+.card-dark .text-california-gold {
+  color: var(--california-gold) !important;
+}
+
+/* Update contact card hover */
+.contact-card:hover {
+  transform: translateX(4px);
+  background-color: rgba(240, 185, 11, 0.1) !important;
+}
+
+/* ============================================ */
+/* NAVBAR THEME STYLES */
+/* ============================================ */
+
+/* Navbar theme variables */
+.glass-nav-mobile {
+  background: var(--bg-primary) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo text - adapts to theme */
+.theme-logo-text {
+  color: var(--text-primary);
+}
+
+/* Navbar links */
+.theme-nav-link {
+  color: var(--text-secondary);
+}
+
+.theme-nav-link:hover {
+  color: var(--california-gold);
+}
+
+/* Partner Button - FIXED for both modes */
+.theme-partner-btn {
+  color: #000000 !important;  /* Always black text on gold background */
+}
+
+.theme-partner-btn:hover {
+  color: #000000 !important;
+  opacity: 0.9;
+}
+
+/* Mobile Partner Button */
+.theme-mobile-partner-btn {
+  color: #000000 !important;  /* Always black text on gold background */
+}
+
+.theme-mobile-partner-btn:hover {
+  color: #000000 !important;
+  opacity: 0.9;
+}
+
+/* Mobile menu button */
+.theme-menu-btn {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.theme-menu-btn:hover {
+  background-color: var(--border-light);
+}
+
+/* Mobile menu background */
+.theme-mobile-menu {
+  background-color: var(--bg-primary);
+  border-color: var(--border-light);
+}
+
+/* Mobile menu links */
+.theme-mobile-link {
+  color: var(--text-secondary);
+  border-bottom-color: var(--border-light);
+}
+
+.theme-mobile-link:hover {
+  color: var(--california-gold);
+}
+
+/* California Gold button base styles - ensures black text always */
+.bg-california-gold,
+.bg-california-gold * {
+  color: #000000 !important;
+}
+
+.bg-california-gold:hover {
+  background-color: var(--california-gold-dark);
+}
+
+/* ============================================ */
+/* HERO SECTION THEME STYLES */
+/* ============================================ */
+
+.hero-section {
+  background-color: var(--bg-primary);
+}
+
+.theme-hero-bg {
+  background-color: var(--bg-primary);
+}
+
+.theme-hero-title {
+  color: var(--text-primary);
+}
+
+.theme-hero-subtitle {
+  color: var(--text-secondary);
+}
+
+.theme-secondary-btn {
+  color: var(--text-primary);
+  border-color: var(--border-light);
+}
+
+.theme-secondary-btn:hover {
+  color: var(--california-gold);
+  border-color: var(--california-gold);
+}
+
+.theme-stat-label {
+  color: var(--text-secondary);
+}
+
+/* Badge styles */
+.theme-badge {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.theme-badge-mobile {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Logo container background */
+.theme-logo-container {
+  background-color: var(--bg-primary);
+}
+
+/* Wave/SVG separator - adapts to theme */
+.theme-wave path {
+  fill: var(--wave-color);
+}
+
+/* ============================================ */
+/* DARK MODE OVERRIDES */
+/* ============================================ */
+
+.dark-mode .glass-nav-mobile {
+  background: rgba(17, 17, 17, 0.95) !important;
+}
+
+.dark-mode .theme-nav-link {
+  color: #d1d5db;
+}
+
+.dark-mode .theme-nav-link:hover {
+  color: var(--california-gold);
+}
+
+.dark-mode .theme-menu-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.dark-mode .theme-menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .theme-mobile-menu {
+  background-color: #1a1a1a;
+}
+
+.dark-mode .theme-mobile-link {
+  color: #d1d5db;
+  border-bottom-color: #374151;
+}
+
+.dark-mode .theme-mobile-link:hover {
+  color: var(--california-gold);
+}
+
+.dark-mode .theme-hero-bg {
+  background-color: #111111;
+}
+
+.dark-mode .theme-hero-title {
+  color: #ffffff;
+}
+
+.dark-mode .theme-hero-subtitle {
+  color: #9ca3af;
+}
+
+.dark-mode .theme-secondary-btn {
+  color: #ffffff;
+  border-color: rgba(240, 185, 11, 0.5);
+}
+
+.dark-mode .theme-secondary-btn:hover {
+  color: var(--california-gold);
+  border-color: var(--california-gold);
+}
+
+.dark-mode .theme-stat-label {
+  color: #9ca3af;
+}
+
+.dark-mode .theme-badge {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode .theme-badge-mobile {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode .theme-logo-container {
+  background-color: #1a1a1a;
+}
+
+.dark-mode .theme-wave path {
+  fill: #1a1a1a;
+}
+
+/* ============================================ */
+/* LIGHT MODE OVERRIDES */
+/* ============================================ */
+
+:root:not(.dark-mode) .glass-nav-mobile {
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+:root:not(.dark-mode) .theme-nav-link {
+  color: #4b5563;
+}
+
+:root:not(.dark-mode) .theme-nav-link:hover {
+  color: var(--california-gold);
+}
+
+:root:not(.dark-mode) .theme-mobile-link {
+  color: #4b5563;
+  border-bottom-color: #e5e7eb;
+}
+
+:root:not(.dark-mode) .theme-menu-btn {
+  background-color: #f3f4f6;
+  color: #111111;
+}
+
+:root:not(.dark-mode) .theme-menu-btn:hover {
+  background-color: #e5e7eb;
+}
+
+:root:not(.dark-mode) .theme-hero-bg {
+  background-color: #ffffff;
+}
+
+:root:not(.dark-mode) .theme-hero-title {
+  color: #111111;
+}
+
+:root:not(.dark-mode) .theme-hero-subtitle {
+  color: #4b5563;
+}
+
+:root:not(.dark-mode) .theme-secondary-btn {
+  color: #111111;
+  border-color: #e5e7eb;
+}
+
+:root:not(.dark-mode) .theme-secondary-btn:hover {
+  color: var(--california-gold);
+  border-color: var(--california-gold);
+}
+
+:root:not(.dark-mode) .theme-stat-label {
+  color: #6b7280;
+}
+
+:root:not(.dark-mode) .theme-badge {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+:root:not(.dark-mode) .theme-badge-mobile {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+:root:not(.dark-mode) .theme-logo-container {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+:root:not(.dark-mode) .theme-wave path {
+  fill: #f9fafb;
+}
+
+/* assets/css/components.css - Add these new rules */
+
+/* Highlight text for tagline */
+.theme-highlight-text {
+  color: var(--california-gold);
+}
+
+/* Dark mode specific for highlight text */
+.dark-mode .theme-highlight-text {
+  color: var(--california-gold);
+}
+
+/* Light mode specific for highlight text */
+:root:not(.dark-mode) .theme-highlight-text {
+  color: var(--dark-green);
+}
+
+/* BESTS acronym styling */
+.theme-acronym {
+  color: var(--california-gold);
+  font-weight: 800;
+}
+
+.dark-mode .theme-acronym {
+  color: var(--california-gold);
+}
+
+:root:not(.dark-mode) .theme-acronym {
+  color: var(--dark-green);
+}
+
+/* Ensure dark-green text is visible in both modes */
+.text-dark-green {
+  color: var(--dark-green);
+}
+
+.dark-mode .text-dark-green {
+  color: #0a5e48;  /* Lighter version for dark mode visibility */
+}
+
+:root:not(.dark-mode) .text-dark-green {
+  color: #0a2e24;
+}
+
+/* ========================================= */
+/* EXPERTISE SECTION FIXES */
+/* ========================================= */
+
+#expertise .section-title {
+  color: var(--text-primary) !important;
+}
+
+#expertise > div > div:first-child p {
+  color: var(--text-secondary) !important;
+}
+
+#expertise .card-dark * {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#expertise .card-dark h3 {
+  color: #ffffff !important;
+}
+
+#expertise .card-dark p,
+#expertise .card-dark li {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+#expertise .card-dark strong {
+  color: var(--california-gold) !important;
+}
+
+/* ========================================= */
+/* MISSION SLIDES ANIMATION */
+/* ========================================= */
+
+@keyframes fadeSlide1 {
+  0%, 30% { opacity: 1; }
+  33%, 100% { opacity: 0; }
+}
+
+@keyframes fadeSlide2 {
+  0%, 33% { opacity: 0; }
+  34%, 63% { opacity: 1; }
+  66%, 100% { opacity: 0; }
+}
+
+@keyframes fadeSlide3 {
+  0%, 66% { opacity: 0; }
+  67%, 100% { opacity: 1; }
+}
+
+.animate-fadeSlide1 {
+  animation: fadeSlide1 12s infinite;
+}
+
+.animate-fadeSlide2 {
+  animation: fadeSlide2 12s infinite;
+}
+
+.animate-fadeSlide3 {
+  animation: fadeSlide3 12s infinite;
+}
+
