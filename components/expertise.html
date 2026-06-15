@@ -1,14 +1,16 @@
 <section id="expertise" class="py-20 md:py-28 relative scroll-animate">
   <div class="max-w-7xl mx-auto px-5 md:px-8">
-
     <!-- HEADER -->
     <div class="text-center max-w-2xl mx-auto mb-14">
-
-      <span class="bg-dark-green text-california-gold text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full">
+      <span
+        class="bg-dark-green text-california-gold text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full"
+      >
         OUR SERVICES
       </span>
 
-      <h2 class="text-4xl md:text-6xl font-bold mt-5 section-title font-serif-display">
+      <h2
+        class="text-4xl md:text-6xl font-bold mt-5 section-title font-serif-display"
+      >
         Comprehensive
         <span class="gradient-hero-text">Lung Health Solutions</span>
       </h2>
@@ -18,74 +20,93 @@
       <p class="text-base md:text-xl mt-6 px-2 theme-text-secondary">
         From precise testing to clear reporting and expert guidance
       </p>
-
     </div>
 
     <!-- GRID -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-
       <!-- CARD 1 -->
-      <div class="card-dark rounded-3xl p-6 md:p-8 transition-all duration-300 hover:shadow-2xl service-card-mobile border border-california-gold/20 hover:border-california-gold/50">
-
-        <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-california-gold/20 text-california-gold flex items-center justify-center text-3xl mb-5">
-          🫁
+      <a
+        href="#contact"
+        class="card-dark rounded-3xl p-6 md:p-8 block transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-california-gold/20 hover:border-california-gold/50 service-card-mobile"
+      >
+        <div class="mb-5 rounded-xl overflow-hidden">
+          <img
+            src="assets/images/services/Spirometry-Reporting.jpg"
+            alt="Spirometry testing"
+            class="w-full h-40 object-cover"
+          />
         </div>
 
-        <h3 class="text-xl md:text-2xl font-bold">
-          Spirometry Testing
-        </h3>
+        <h3 class="text-xl md:text-2xl font-bold">Spirometry Testing</h3>
 
         <p class="mt-3 leading-relaxed text-sm md:text-base">
-          Measures lung function and provides accurate test results for healthcare professionals to effectively diagnose and monitor respiratory issues, including:
+          Accurate lung function testing to diagnose and monitor respiratory
+          conditions.
         </p>
 
-        <ul class="mt-3 text-sm list-disc pl-5 space-y-1">
+        <ul class="mt-4 text-sm list-disc pl-5 space-y-1">
           <li>
-            <strong class="text-california-gold">Restrictive impairment</strong>
-            — e.g., lung fibrosis, pneumothorax
+            <strong class="text-california-gold">Restrictive</strong> — lung
+            fibrosis, pneumothorax
           </li>
           <li>
-            <strong class="text-california-gold">Obstructive impairment</strong>
-            — e.g., Asthma, COPD
+            <strong class="text-california-gold">Obstructive</strong> — asthma,
+            COPD
           </li>
           <li>
-            <strong class="text-california-gold">Mixed impairment</strong>
-            — combination of restrictive and obstructive patterns
+            <strong class="text-california-gold">Mixed</strong> — combined
+            patterns
           </li>
         </ul>
-
-        <div class="mt-6 flex items-center text-california-gold font-semibold text-sm">
-          Book a test <i class="fas fa-arrow-right ml-2 text-xs"></i>
+        <div
+          onclick="openBookingModal('spirometry')"
+          class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-california-gold/10 hover:bg-california-gold/20 transition text-california-gold font-semibold text-sm cursor-pointer"
+        >
+          Book a test
+          <i class="fas fa-arrow-right text-xs"></i>
         </div>
-
-      </div>
+      </a>
 
       <!-- CARD 2 -->
-      <div class="card-dark rounded-3xl p-6 md:p-8 transition-all duration-300 hover:shadow-2xl service-card-mobile border border-california-gold/20 hover:border-california-gold/50">
-
-        <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-california-gold/20 text-california-gold flex items-center justify-center text-3xl mb-5">
-          📋
+      <a
+        href="#reports"
+        class="card-dark rounded-3xl p-6 md:p-8 block transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-california-gold/20 hover:border-california-gold/50 service-card-mobile"
+      >
+        <div class="mb-5 rounded-xl overflow-hidden">
+          <img
+            src="assets/images/services/Test-Result-Reporting.jpg"
+            alt="Test result report"
+            class="w-full h-40 object-cover"
+          />
         </div>
 
-        <h3 class="text-xl md:text-2xl font-bold">
-          Test Result Reporting
-        </h3>
+        <h3 class="text-xl md:text-2xl font-bold">Test Result Reporting</h3>
 
         <p class="mt-3 leading-relaxed text-sm md:text-base">
-          Provides detailed and easy-to-understand test result reports for healthcare professionals and patients, highlighting key findings and recommendations.
+          Clear, structured reports designed for both healthcare professionals
+          and patients.
         </p>
 
-        <div class="mt-6 flex items-center text-california-gold font-semibold text-sm">
-          See sample reports <i class="fas fa-arrow-right ml-2 text-xs"></i>
+        <div
+          onclick="openReportsModal()"
+          class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-california-gold/10 hover:bg-california-gold/20 transition text-california-gold font-semibold text-sm cursor-pointer"
+        >
+          See sample reports
+          <i class="fas fa-arrow-right text-xs"></i>
         </div>
-
-      </div>
+      </a>
 
       <!-- CARD 3 -->
-      <div class="card-dark rounded-3xl p-6 md:p-8 transition-all duration-300 hover:shadow-2xl service-card-mobile border border-california-gold/20 hover:border-california-gold/50">
-
-        <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-california-gold/20 text-california-gold flex items-center justify-center text-3xl mb-5">
-          🎓
+      <a
+        href="#consultation"
+        class="card-dark rounded-3xl p-6 md:p-8 block transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-california-gold/20 hover:border-california-gold/50 service-card-mobile"
+      >
+        <div class="mb-5 rounded-xl overflow-hidden">
+          <img
+            src="assets/images/services/consultation.jpg"
+            alt="Consultation support"
+            class="w-full h-40 object-cover"
+          />
         </div>
 
         <h3 class="text-xl md:text-2xl font-bold">
@@ -93,15 +114,18 @@
         </h3>
 
         <p class="mt-3 leading-relaxed text-sm md:text-base">
-          Pre-test preparation, patient education, data interpretation, and expert support for healthcare professionals and patients on spirometry procedures, result interpretation, and disease management.
+          Expert support for test preparation, interpretation, and clinical
+          guidance.
         </p>
 
-        <div class="mt-6 flex items-center text-california-gold font-semibold text-sm">
-          Schedule consultation <i class="fas fa-arrow-right ml-2 text-xs"></i>
+        <div
+          onclick="openBookingModal('consultation')"
+          class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-california-gold/10 hover:bg-california-gold/20 transition text-california-gold font-semibold text-sm cursor-pointer"
+        >
+          Schedule consultation
+          <i class="fas fa-arrow-right text-xs"></i>
         </div>
-
-      </div>
-
+      </a>
     </div>
   </div>
 </section>

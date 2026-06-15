@@ -79,4 +79,8 @@
   transform: translateY(0);
 }
 
+#reportImage {
+  transition: all 300ms ease-in-out;
+}
+
 
