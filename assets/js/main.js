@@ -218,11 +218,10 @@ function initReportsModal() {
 
   // 👇 your images
   const images = [
-    "assets/images/reports/report1.jpg",
-    "assets/images/reports/report2.png",
-    "assets/images/reports/report3.jpg",
-    "assets/images/reports/report1.jpg",
-    "assets/images/reports/report3.jpg",
+    "assets/images/reports/report4.jpeg",
+    "assets/images/reports/report4.jpeg",
+    "assets/images/reports/report4.jpeg",
+   
   ];
 
   let currentIndex = 0;
