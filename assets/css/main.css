@@ -1,4 +1,10 @@
-/* assets/css/main.css */
+/* ============================================
+   MAIN.CSS - Clean & Organized
+   ============================================ */
+
+/* ============================================
+   1. RESET & BASE
+   ============================================ */
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +15,24 @@ body {
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+  scroll-padding-top: 80px;
 }
 
 .font-serif-display {
   font-family: 'Playfair Display', serif;
 }
 
-/* Client Brand Colors */
+/* ============================================
+   2. THEME VARIABLES
+   ============================================ */
 :root {
+  /* Brand Colors */
   --dark-green: #0a2e24;
   --dark-green-light: #115e46;
   --california-gold: #f0b90b;
@@ -37,7 +53,7 @@ body {
   --wave-color: #f9fafb;
 }
 
-/* Dark Mode (when .dark-mode class is added to html) */
+/* Dark Mode */
 .dark-mode {
   --text-primary: #ffffff;
   --text-secondary: #9ca3af;
@@ -49,125 +65,25 @@ body {
   --wave-color: #1a1a1a;
 }
 
-/* Apply theme variables to elements */
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+/* ============================================
+   3. UTILITY CLASSES
+   ============================================ */
 
-/* Headings and important text - keep dark in light mode */
-h1, h2, h3, h4, .hero-title, .section-title {
-  color: var(--text-primary) !important;
-}
+/* Background Colors */
+.bg-dark-green { background-color: var(--dark-green); }
+.bg-dark-green-light { background-color: var(--dark-green-light); }
+.bg-california-gold { background-color: var(--california-gold); }
+.bg-california-gold-dark { background-color: var(--california-gold-dark); }
 
-/* Text colors - more specific selectors */
-.text-gray-900, .text-gray-800, .text-gray-700, 
-.text-gray-900\.leading-tight, .text-gray-800\.leading-relaxed {
-  color: var(--text-primary) !important;
-}
+/* Text Colors */
+.text-california-gold { color: var(--california-gold); }
+.text-dark-green { color: var(--dark-green); }
 
-.text-gray-600, .text-gray-500, .text-gray-400 {
-  color: var(--text-secondary) !important;
-}
+/* Border Colors */
+.border-california-gold { border-color: var(--california-gold); }
+.border-dark-green { border-color: var(--dark-green); }
 
-/* White text that should stay white (buttons, etc) */
-.text-white {
-  color: #ffffff !important;
-}
-
-.dark-mode .text-white {
-  color: #ffffff !important;
-}
-
-/* Background colors */
-.bg-white, .bg-gray-50, .bg-gray-50\/80, 
-.bg-gray-50\/90, .bg-white\/95 {
-  background-color: var(--bg-secondary) !important;
-}
-
-.bg-black, .bg-gray-900 {
-  background-color: var(--bg-primary) !important;
-}
-
-/* Dark green backgrounds - text should be white */
-.bg-dark-green,
-.bg-dark-green-light,
-section[id="mission"] {
-  background-color: var(--dark-green) !important;
-}
-
-/* Force ALL text inside dark sections/cards to stay readable */
-.bg-dark-green h1,
-.bg-dark-green h2,
-.bg-dark-green h3,
-.bg-dark-green h4,
-.bg-dark-green p,
-.bg-dark-green li,
-.bg-dark-green span,
-.bg-dark-green .text-gray-400,
-.bg-dark-green .text-gray-500,
-.bg-dark-green .text-gray-600,
-.bg-dark-green .text-white {
-  color: rgba(255, 255, 255, 0.9) !important;
-}
-
-/* Gold text should remain gold */
-.bg-dark-green .text-california-gold {
-  color: var(--california-gold) !important;
-}
-
-/* Card backgrounds */
-.card-dark, .bg-dark-green.rounded-3xl {
-  background-color: var(--card-bg) !important;
-}
-
-/* Border colors */
-.border-gray-100, .border-gray-200, .border-gray-300,
-.border-gray-100\.border, .border-gray-200\.border {
-  border-color: var(--border-light) !important;
-}
-
-/* Form input backgrounds */
-input, textarea {
-  background-color: var(--bg-secondary) !important;
-  color: var(--text-primary) !important;
-  border-color: var(--border-light) !important;
-}
-
-input::placeholder, textarea::placeholder {
-  color: var(--text-secondary) !important;
-}
-
-/* Partner card backgrounds */
-.bg-white.p-8.rounded-3xl {
-  background-color: var(--bg-secondary) !important;
-}
-
-/* Contact card backgrounds */
-.contact-card {
-  background-color: var(--bg-secondary) !important;
-}
-
-.contact-card:hover {
-  background-color: rgba(240, 185, 11, 0.1) !important;
-}
-
-/* Hero section specific - ensure text is visible */
-#home .hero-title {
-  color: var(--text-primary) !important;
-}
-
-#home .text-gray-600 {
-  color: var(--text-secondary) !important;
-}
-
-/* Mission section - always white text */
-#mission h2, #mission p, #mission i {
-  color: #ffffff !important;
-}
-
-/* Gradient text - works in both modes */
+/* Gradient Text */
 .gradient-hero-text {
   background: linear-gradient(135deg, var(--dark-green) 0%, var(--california-gold) 100%);
   -webkit-background-clip: text;
@@ -182,32 +98,7 @@ input::placeholder, textarea::placeholder {
   color: transparent !important;
 }
 
-/* Utility Classes for Client Colors */
-.bg-dark-green {
-  background-color: var(--dark-green);
-}
-.bg-dark-green-light {
-  background-color: var(--dark-green-light);
-}
-.bg-california-gold {
-  background-color: var(--california-gold);
-}
-.bg-california-gold-dark {
-  background-color: var(--california-gold-dark);
-}
-.text-california-gold {
-  color: var(--california-gold);
-}
-.text-dark-green {
-  color: var(--dark-green);
-}
-.border-california-gold {
-  border-color: var(--california-gold);
-}
-.border-dark-green {
-  border-color: var(--dark-green);
-}
-
+/* Other Utilities */
 .glass-nav-mobile {
   background: rgba(10, 46, 36, 0.95);
   backdrop-filter: blur(12px);
@@ -218,23 +109,150 @@ input::placeholder, textarea::placeholder {
   padding-bottom: env(safe-area-inset-bottom);
 }
 
-@media (max-width: 640px) {
-  .service-card-mobile {
-    margin: 0 4px;
-  }
+/* ============================================
+   4. TYPOGRAPHY
+   ============================================ */
+
+/* Headings */
+h1, h2, h3, h4, .hero-title, .section-title {
+  color: var(--text-primary) !important;
 }
 
-html {
-  scroll-padding-top: 80px;
+/* Text Colors - Theme Aware */
+.text-gray-900, .text-gray-800, .text-gray-700, 
+.text-gray-900\.leading-tight, .text-gray-800\.leading-relaxed {
+  color: var(--text-primary) !important;
 }
 
-@media (max-width: 768px) {
-  html {
-    scroll-padding-top: 70px;
-  }
+.text-gray-600, .text-gray-500, .text-gray-400 {
+  color: var(--text-secondary) !important;
 }
 
-/* Expertise section fixes */
+.text-white {
+  color: #ffffff !important;
+}
+
+.dark-mode .text-white {
+  color: #ffffff !important;
+}
+
+/* ============================================
+   5. BACKGROUND COLORS - THEME AWARE
+   ============================================ */
+
+.bg-white, .bg-gray-50, .bg-gray-50\/80, 
+.bg-gray-50\/90, .bg-white\/95 {
+  background-color: var(--bg-secondary) !important;
+}
+
+.bg-black, .bg-gray-900 {
+  background-color: var(--bg-primary) !important;
+}
+
+.bg-dark-green,
+.bg-dark-green-light,
+section[id="mission"] {
+  background-color: var(--dark-green) !important;
+}
+
+/* Card Backgrounds */
+.card-dark, .bg-dark-green.rounded-3xl {
+  background-color: var(--card-bg) !important;
+}
+
+.bg-white.p-8.rounded-3xl {
+  background-color: var(--bg-secondary) !important;
+}
+
+.contact-card {
+  background-color: var(--bg-secondary) !important;
+}
+
+.contact-card:hover {
+  background-color: rgba(240, 185, 11, 0.1) !important;
+}
+
+/* ============================================
+   6. BORDERS
+   ============================================ */
+
+.border-gray-100, .border-gray-200, .border-gray-300,
+.border-gray-100\.border, .border-gray-200\.border {
+  border-color: var(--border-light) !important;
+}
+
+/* ============================================
+   7. FORM ELEMENTS
+   ============================================ */
+
+input, textarea {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-light) !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text-secondary) !important;
+}
+
+/* ============================================
+   8. SPECIFIC SECTION OVERRIDES
+   ============================================ */
+
+/* Hero Section */
+#home .hero-title {
+  color: var(--text-primary) !important;
+}
+
+#home .text-gray-600 {
+  color: var(--text-secondary) !important;
+}
+
+/* Mission Section */
+#mission {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+#mission h2, #mission p, #mission i {
+  color: #ffffff !important;
+}
+
+/* Dark text inside mission should stay white */
+.bg-dark-green h1,
+.bg-dark-green h2,
+.bg-dark-green h3,
+.bg-dark-green h4,
+.bg-dark-green p,
+.bg-dark-green li,
+.bg-dark-green span,
+.bg-dark-green .text-gray-400,
+.bg-dark-green .text-gray-500,
+.bg-dark-green .text-gray-600,
+.bg-dark-green .text-white {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.bg-dark-green .text-california-gold {
+  color: var(--california-gold) !important;
+}
+
+/* Mission Slides */
+#mission .absolute.inset-0 {
+  width: 100%;
+  height: 100%;
+}
+
+#mission img,
+#mission video {
+  width: 100%;
+  height: 100%;
+}
+
+/* Expertise Section */
 #expertise {
   background-color: var(--bg-primary) !important;
 }
@@ -245,4 +263,89 @@ html {
 
 #expertise > div > div:first-child p {
   color: var(--text-secondary) !important;
+}
+
+#expertise .card-dark * {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#expertise .card-dark h3 {
+  color: #ffffff !important;
+}
+
+#expertise .card-dark p,
+#expertise .card-dark li {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+#expertise .card-dark strong {
+  color: var(--california-gold) !important;
+}
+
+/* ============================================
+   9. RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+}
+
+@media (max-width: 640px) {
+  .service-card-mobile {
+    margin: 0 4px;
+  }
+  
+  /* Mobile gradient overlay for mission */
+  #mission .bg-gradient-to-b {
+    background: linear-gradient(to bottom, 
+      rgba(0,0,0,0.8) 0%, 
+      rgba(0,0,0,0.6) 50%, 
+      rgba(0,0,0,0.8) 100%
+    );
+  }
+}
+
+/* ============================================
+   10. MISSION SLIDES ANIMATIONS
+   ============================================ */
+
+@keyframes fadeSlide1 {
+  0%, 22% { opacity: 1; }
+  25%, 100% { opacity: 0; }
+}
+
+@keyframes fadeSlide2 {
+  0%, 22% { opacity: 0; }
+  25%, 47% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes fadeSlide3 {
+  0%, 47% { opacity: 0; }
+  50%, 72% { opacity: 1; }
+  75%, 100% { opacity: 0; }
+}
+
+@keyframes fadeSlide4 {
+  0%, 72% { opacity: 0; }
+  75%, 100% { opacity: 1; }
+}
+
+.animate-fadeSlide1 {
+  animation: fadeSlide1 20s infinite;
+}
+
+.animate-fadeSlide2 {
+  animation: fadeSlide2 20s infinite;
+}
+
+.animate-fadeSlide3 {
+  animation: fadeSlide3 20s infinite;
+}
+
+.animate-fadeSlide4 {
+  animation: fadeSlide4 20s infinite;
 }

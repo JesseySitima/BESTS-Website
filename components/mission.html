@@ -1,54 +1,81 @@
-<section id="mission" class="relative py-24 md:py-32 overflow-hidden scroll-animate">
-  <!-- SLIDES BACKGROUND -->
-  <div class="absolute inset-0 w-full h-full">
-    <!-- SLIDE 1 -->
-    <div
-      class="absolute inset-0 bg-[url('https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg')] bg-cover bg-center opacity-0 animate-fadeSlide1"
-    ></div>
+<section id="mission" class="bg-dark-green py-20 md:py-28 scroll-animate">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <!-- HEADER -->
 
-    <!-- SLIDE 2 -->
-    <div
-      class="absolute inset-0 bg-[url('https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg')] bg-cover bg-center opacity-0 animate-fadeSlide2"
-    ></div>
-
-    <!-- SLIDE 3 -->
-    <div
-      class="absolute inset-0 bg-[url('https://images.pexels.com/photos/1170979/pexels-photo-1170979.jpeg')] bg-cover bg-center opacity-0 animate-fadeSlide3"
-    ></div>
-
-    <!-- DARK OVERLAY -->
-    <div class="absolute inset-0 bg-black/60"></div>
-
-    <!-- OPTIONAL VIDEO BACKGROUND (UNCOMMENT IF NEEDED) -->
-    <!--
-    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover opacity-40">
-      <source src="assets/video/medical.mp4" type="video/mp4">
-    </video>
-    -->
-  </div>
-
-  <!-- FLOATING CONTENT -->
-  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
-    <div
-      class="relative max-w-5xl mx-auto px-6 text-center text-white z-10 bg-transparent"
-    >
-      <i
-        class="fas fa-quote-left text-5xl md:text-7xl text-california-gold/60 mb-6"
-      ></i>
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="mission-badge px-5 py-2 rounded-full text-sm font-semibold">
+        OUR MISSION
+      </span>
 
       <h2
-        class="text-4xl md:text-7xl font-serif-display font-bold mb-6 tracking-wide"
+        class="text-4xl md:text-6xl font-serif-display font-bold mt-6 text-white"
       >
-        Our Mission
+        Lung Function 
+        <span class="text-california-gold"> Experts </span>
       </h2>
 
-      <p
-        class="text-xl md:text-3xl font-light leading-relaxed max-w-3xl mx-auto"
-      >
+      <div class="w-20 h-1 bg-california-gold mx-auto mt-6 rounded-full"></div>
+
+      <p class="mt-6 text-white/80 text-lg md:text-xl leading-relaxed">
         Save lives for easy breathing in Malawi through accurate and reliable
         lung function testing. Build lasting partnerships with healthcare
         professionals who refuse to compromise on quality results.
       </p>
+    </div>
+
+    <!-- SLIDER -->
+
+    <div
+      class="mission-slider relative w-full h-[300px] sm:h-[380px] md:h-[600px]"
+    >
+      <!-- IMAGE 1 -->
+
+      <div class="absolute inset-0 animate-fadeSlide1">
+        <img
+          src="assets/images/mission/mission1.jpeg"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- IMAGE 2 -->
+
+      <div class="absolute inset-0 animate-fadeSlide2">
+        <img
+          src="assets/images/mission/mission2.jpeg"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- IMAGE 3 -->
+
+      <div class="absolute inset-0 animate-fadeSlide3">
+        <img
+          src="assets/images/mission/mission3.jpeg"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- VIDEO -->
+
+      <div class="absolute inset-0 animate-fadeSlide4">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="assets/images/mission/mission4.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <!-- DARK GRADIENT -->
+
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
+      ></div>
+
+      <!-- FLOATING CARD -->
     </div>
   </div>
 </section>

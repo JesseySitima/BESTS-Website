@@ -449,3 +449,76 @@
   animation: fadeSlide3 12s infinite;
 }
 
+/* =========================================
+   MISSION MODERN SLIDER
+========================================= */
+
+.mission-slider {
+  width: 100%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.mission-slider img,
+.mission-slider video {
+  transition: transform 8s ease;
+}
+
+
+.mission-slider:hover img,
+.mission-slider:hover video {
+  transform: scale(1.05);
+}
+
+
+/* glass information card */
+
+.mission-glass {
+  background: rgba(10,46,36,0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(240,185,11,0.25);
+}
+
+
+/* mission badge */
+
+.mission-badge {
+
+  background: rgba(240,185,11,0.12);
+  border:1px solid rgba(240,185,11,0.35);
+
+  color:var(--california-gold);
+
+}
+
+
+/* slide dots */
+
+.mission-dot {
+
+  width:10px;
+  height:10px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.5);
+
+}
+
+@media(max-width:640px){
+
+  .mission-slider{
+    border-radius:1.25rem;
+    margin-left:0;
+    margin-right:0;
+  }
+
+
+  .mission-slider img,
+  .mission-slider video{
+    object-position:center;
+  }
+
+}

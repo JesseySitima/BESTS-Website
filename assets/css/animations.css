@@ -83,4 +83,39 @@
   transition: all 300ms ease-in-out;
 }
 
+/* assets/css/animations.css - Add these keyframes */
+@keyframes fadeSlide1 {
+  0%, 23% { opacity: 1; }
+  25%, 100% { opacity: 0; }
+}
+
+@keyframes fadeSlide2 {
+  0%, 25% { opacity: 0; }
+  27%, 48% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes fadeSlide3 {
+  0%, 50% { opacity: 0; }
+  52%, 73% { opacity: 1; }
+  75%, 100% { opacity: 0; }
+}
+
+@keyframes fadeSlide4 {
+  0%, 75% { opacity: 0; }
+  77%, 98% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+.animate-fadeSlide1,
+.animate-fadeSlide2,
+.animate-fadeSlide3,
+.animate-fadeSlide4 {
+
+  animation-duration:24s;
+  animation-iteration-count:infinite;
+
+}
+
 
