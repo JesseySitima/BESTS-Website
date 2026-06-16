@@ -62,28 +62,19 @@ function initThemeToggle() {
 
 // Load all components sequentially
 async function loadAllComponents() {
-  const components = [
-    { id: "navbar-container", path: "../../components/navbar.html" },
-    { id: "hero-container", path: "../../components/hero.html" },
-    { id: "mission-container", path: "../../components/mission.html" },
-    { id: "expertise-container", path: "../../components/expertise.html" },
-    { id: "about-container", path: "../../components/about.html" },
-    {
-      id: "testimonials-container",
-      path: "../../components/testimonials.html",
-    },
-    { id: "partners-container", path: "../../components/partners.html" },
-    { id: "contact-container", path: "../../components/contact.html" },
-    { id: "footer-container", path: "../../components/footer.html" },
-    {
-      id: "booking-modal-container",
-      path: "../../components/bookingModal.html",
-    },
-    {
-      id: "reports-modal-container",
-      path: "../../components/reportsModal.html",
-    },
-  ];
+ const components = [
+  { id: "navbar-container", path: "components/navbar.html" },
+  { id: "hero-container", path: "components/hero.html" },
+  { id: "mission-container", path: "components/mission.html" },
+  { id: "expertise-container", path: "components/expertise.html" },
+  { id: "about-container", path: "components/about.html" },
+  { id: "testimonials-container", path: "components/testimonials.html" },
+  { id: "partners-container", path: "components/partners.html" },
+  { id: "contact-container", path: "components/contact.html" },
+  { id: "footer-container", path: "components/footer.html" },
+  { id: "booking-modal-container", path: "components/bookingModal.html" },
+  { id: "reports-modal-container", path: "components/reportsModal.html" },
+];
 
   for (const comp of components) {
     await loadComponent(comp.id, comp.path);
