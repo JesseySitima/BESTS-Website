@@ -74,6 +74,10 @@ async function loadAllComponents() {
   { id: "footer-container", path: "components/footer.html" },
   { id: "booking-modal-container", path: "components/bookingModal.html" },
   { id: "reports-modal-container", path: "components/reportsModal.html" },
+  {
+    id: "medical-disclaimer-modal-container",
+    path: "components/medicalDisclaimerModal.html",
+  },
 ];
 
   for (const comp of components) {
@@ -89,6 +93,7 @@ async function loadAllComponents() {
   initScrollAnimations();
   initBookingModal();
   initReportsModal();
+  initMedicalDisclaimerModal();
 }
 
 function initMobileMenu() {
@@ -208,6 +213,58 @@ function initBookingModal() {
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
       window.closeBookingModal();
+    }
+  });
+}
+
+function initMedicalDisclaimerModal() {
+  const modal = document.getElementById("medicalDisclaimerModal");
+  const openBtn = document.getElementById("medicalDisclaimerLink");
+  const closeBtn = document.getElementById(
+    "closeMedicalDisclaimerModal",
+  );
+  const acceptBtn = document.getElementById(
+    "acceptMedicalDisclaimer",
+  );
+
+  if (!modal || !openBtn) return;
+
+  window.openMedicalDisclaimerModal = () => {
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    document.body.classList.add("overflow-hidden");
+  };
+
+  window.closeMedicalDisclaimerModal = () => {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+    document.body.classList.remove("overflow-hidden");
+  };
+
+  openBtn.addEventListener("click", window.openMedicalDisclaimerModal);
+
+  closeBtn?.addEventListener(
+    "click",
+    window.closeMedicalDisclaimerModal,
+  );
+
+  acceptBtn?.addEventListener(
+    "click",
+    window.closeMedicalDisclaimerModal,
+  );
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      window.closeMedicalDisclaimerModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (
+      e.key === "Escape" &&
+      !modal.classList.contains("hidden")
+    ) {
+      window.closeMedicalDisclaimerModal();
     }
   });
 }

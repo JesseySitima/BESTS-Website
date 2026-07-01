@@ -8,17 +8,16 @@
         </span>
 
         <h2
-          class="text-4xl md:text-5xl font-bold mt-2 text-white leading-tight"
+          class="text-2xl md:text-3xl font-bold mt-2 text-white leading-tight"
         >
-          Your partner in <br />respiratory excellence
+          To save lives through respiratory excellence
         </h2>
 
-        <p class="mt-5 leading-relaxed text-lg theme-text-secondary">
+        <p class="mt-5 leading-relaxed text-sm theme-text-secondary text-justify">
           BESTS is ready to elevate lung health services across clinics,
-          hospitals, and NGOs in Malawi.
+          hospitals, NGOs, and companies in Malawi.
         </p>
 
-        <!-- CONTACT CARDS -->
         <!-- CONTACT CARDS -->
         <div class="mt-10 space-y-5">
           <!-- EMAIL -->
@@ -132,6 +131,30 @@
             placeholder="Tell us about your lung health needs..."
             class="w-full px-5 py-4 rounded-2xl bg-dark-green border border-california-gold/30 focus:border-california-gold focus:ring-2 focus:ring-california-gold/20 outline-none resize-none text-base text-white placeholder-gray-500"
           ></textarea>
+
+          <!-- MEDICAL DISCLAIMER CHECKBOX -->
+          <div class="flex items-start gap-3 pt-2">
+            <input
+              type="checkbox"
+              id="medical-agree"
+              required
+              class="mt-1 w-5 h-5 accent-california-gold bg-dark-green border border-california-gold/40 rounded focus:ring-california-gold"
+            />
+            <div class="text-sm text-gray-400 leading-relaxed text-justify">
+              <label for="medical-agree" class="cursor-pointer select-none">
+                I understand BESTS provides technical testing services only.
+                Results must be reviewed by my doctor.
+              </label>
+
+              <button
+                type="button"
+                id="medicalDisclaimerLink"
+                class="text-california-gold underline hover:text-white transition ml-1"
+              >
+                Read the Medical Disclaimer
+              </button>
+            </div>
+          </div>
 
           <button
             type="submit"
