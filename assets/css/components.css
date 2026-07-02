@@ -522,3 +522,70 @@
   }
 
 }
+
+.mission-word {
+  font-size: clamp(2.8rem, 6vw, 6rem);
+  font-weight: 700;
+  color: var(--california-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  animation: missionWordAnim 6s ease-in-out infinite;
+
+  text-shadow: 0 12px 35px rgba(0,0,0,0.6);
+  text-align: center;
+
+    max-width: 90%;
+  padding: 0 1rem;
+  line-height: 1.1;
+  word-break: break-word;
+}
+
+@keyframes missionWordAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+    filter: blur(6px);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(0) scale(1.02);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scale(1.05);
+    filter: blur(4px);
+  }
+}
+.mission-slider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.75)
+  );
+  z-index: 1;
+}
+
+@media (max-width: 640px) {
+  .mission-word {
+    font-size: clamp(1.4rem, 6vw, 2.5rem);
+    letter-spacing: 0.05em;
+  }
+}
+
+#mission .mission-word {
+  color: var(--california-gold) !important;
+}

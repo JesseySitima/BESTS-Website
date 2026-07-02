@@ -85,26 +85,31 @@
 
 /* assets/css/animations.css - Add these keyframes */
 @keyframes fadeSlide1 {
-  0%, 23% { opacity: 1; }
-  25%, 100% { opacity: 0; }
+  0%, 18% { opacity: 1; }
+  22%, 100% { opacity: 0; }
 }
 
 @keyframes fadeSlide2 {
-  0%, 25% { opacity: 0; }
-  27%, 48% { opacity: 1; }
-  50%, 100% { opacity: 0; }
+  0%, 22% { opacity: 0; }
+  26%, 43% { opacity: 1; }
+  47%, 100% { opacity: 0; }
 }
 
 @keyframes fadeSlide3 {
-  0%, 50% { opacity: 0; }
-  52%, 73% { opacity: 1; }
-  75%, 100% { opacity: 0; }
+  0%, 47% { opacity: 0; }
+  51%, 68% { opacity: 1; }
+  72%, 100% { opacity: 0; }
 }
 
 @keyframes fadeSlide4 {
-  0%, 75% { opacity: 0; }
-  77%, 98% { opacity: 1; }
-  100% { opacity: 0; }
+  0%, 72% { opacity: 0; }
+  76%, 93% { opacity: 1; }
+  97%, 100% { opacity: 0; }
+}
+
+video {
+  animation: none !important;
+  object-fit: cover;
 }
 
 
@@ -113,7 +118,7 @@
 .animate-fadeSlide3,
 .animate-fadeSlide4 {
 
-  animation-duration:24s;
+  animation-duration:18s;
   animation-iteration-count:infinite;
 
 }
