@@ -221,7 +221,9 @@ function initBookingModal() {
 
 function initMedicalDisclaimerModal() {
   const modal = document.getElementById("medicalDisclaimerModal");
-  const openBtn = document.getElementById("medicalDisclaimerLink");
+ const openBtns = document.querySelectorAll(
+  "#medicalDisclaimerLink, .legal-link"
+);
   const closeBtn = document.getElementById(
     "closeMedicalDisclaimerModal",
   );
@@ -229,7 +231,7 @@ function initMedicalDisclaimerModal() {
     "acceptMedicalDisclaimer",
   );
 
-  if (!modal || !openBtn) return;
+  if (!modal || !openBtns.length) return;
 
   window.openMedicalDisclaimerModal = () => {
     modal.classList.remove("hidden");
@@ -243,7 +245,12 @@ function initMedicalDisclaimerModal() {
     document.body.classList.remove("overflow-hidden");
   };
 
-  openBtn.addEventListener("click", window.openMedicalDisclaimerModal);
+ openBtns.forEach((btn) => {
+  btn.addEventListener(
+    "click",
+    window.openMedicalDisclaimerModal
+  );
+});
 
   closeBtn?.addEventListener(
     "click",
