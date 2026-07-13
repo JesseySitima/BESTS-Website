@@ -3,6 +3,7 @@ import { loadComponent } from "./mobileMenu.js";
 import { initContactForm } from "./contactForm.js";
 import { initSmoothScroll } from "./smoothScroll.js";
 import { initScrollAnimations } from "./scrollAnimations.js";
+import { initMissionSlider } from "./missionSlider.js";
 
 function initThemeToggle() {
   // Create the toggle button
@@ -94,6 +95,7 @@ async function loadAllComponents() {
   initBookingModal();
   initReportsModal();
   initMedicalDisclaimerModal();
+  initMissionSlider();
 }
 
 function initMobileMenu() {

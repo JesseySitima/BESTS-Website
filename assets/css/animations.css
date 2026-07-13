@@ -84,43 +84,28 @@
 }
 
 /* assets/css/animations.css - Add these keyframes */
-@keyframes fadeSlide1 {
-  0%, 18% { opacity: 1; }
-  22%, 100% { opacity: 0; }
-}
-
-@keyframes fadeSlide2 {
-  0%, 22% { opacity: 0; }
-  26%, 43% { opacity: 1; }
-  47%, 100% { opacity: 0; }
-}
-
-@keyframes fadeSlide3 {
-  0%, 47% { opacity: 0; }
-  51%, 68% { opacity: 1; }
-  72%, 100% { opacity: 0; }
-}
-
-@keyframes fadeSlide4 {
-  0%, 72% { opacity: 0; }
-  76%, 93% { opacity: 1; }
-  97%, 100% { opacity: 0; }
-}
 
 video {
   animation: none !important;
   object-fit: cover;
 }
 
-
-.animate-fadeSlide1,
-.animate-fadeSlide2,
-.animate-fadeSlide3,
-.animate-fadeSlide4 {
-
-  animation-duration:18s;
-  animation-iteration-count:infinite;
-
+.mission-slide h3 {
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: all 0.8s cubic-bezier(0.16,1,0.3,1);
 }
+
+
+.mission-slide.opacity-100 h3 {
+  transform: translateY(0);
+  opacity:1;
+}
+
+
+.mission-slide.opacity-0 h3 {
+  transform: translateY(20px);
+  opacity:0;
+}
+
 
 
