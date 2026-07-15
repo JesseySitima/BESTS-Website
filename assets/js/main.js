@@ -4,6 +4,7 @@ import { initContactForm } from "./contactForm.js";
 import { initSmoothScroll } from "./smoothScroll.js";
 import { initScrollAnimations } from "./scrollAnimations.js";
 import { initMissionSlider } from "./missionSlider.js";
+import { legalContent } from "./legal/index.js";
 
 function initThemeToggle() {
   // Create the toggle button
@@ -63,23 +64,23 @@ function initThemeToggle() {
 
 // Load all components sequentially
 async function loadAllComponents() {
- const components = [
-  { id: "navbar-container", path: "components/navbar.html" },
-  { id: "hero-container", path: "components/hero.html" },
-  { id: "mission-container", path: "components/mission.html" },
-  { id: "expertise-container", path: "components/expertise.html" },
-  { id: "about-container", path: "components/about.html" },
-  { id: "testimonials-container", path: "components/testimonials.html" },
-  { id: "partners-container", path: "components/partners.html" },
-  { id: "contact-container", path: "components/contact.html" },
-  { id: "footer-container", path: "components/footer.html" },
-  { id: "booking-modal-container", path: "components/bookingModal.html" },
-  { id: "reports-modal-container", path: "components/reportsModal.html" },
-  {
-    id: "medical-disclaimer-modal-container",
-    path: "components/medicalDisclaimerModal.html",
-  },
-];
+  const components = [
+    { id: "navbar-container", path: "components/navbar.html" },
+    { id: "hero-container", path: "components/hero.html" },
+    { id: "mission-container", path: "components/mission.html" },
+    { id: "expertise-container", path: "components/expertise.html" },
+    { id: "about-container", path: "components/about.html" },
+    { id: "testimonials-container", path: "components/testimonials.html" },
+    { id: "partners-container", path: "components/partners.html" },
+    { id: "contact-container", path: "components/contact.html" },
+    { id: "footer-container", path: "components/footer.html" },
+    { id: "booking-modal-container", path: "components/bookingModal.html" },
+    { id: "reports-modal-container", path: "components/reportsModal.html" },
+    {
+      id: "medical-disclaimer-modal-container",
+      path: "components/medicalDisclaimerModal.html",
+    },
+  ];
 
   for (const comp of components) {
     await loadComponent(comp.id, comp.path);
@@ -221,15 +222,13 @@ function initBookingModal() {
 
 function initMedicalDisclaimerModal() {
   const modal = document.getElementById("medicalDisclaimerModal");
- const openBtns = document.querySelectorAll(
-  "#medicalDisclaimerLink, .legal-link"
-);
-  const closeBtn = document.getElementById(
-    "closeMedicalDisclaimerModal",
+  const openBtns = document.querySelectorAll(
+    "#medicalDisclaimerLink, .legal-link",
   );
-  const acceptBtn = document.getElementById(
-    "acceptMedicalDisclaimer",
-  );
+  const closeBtn = document.getElementById("closeMedicalDisclaimerModal");
+  const acceptBtn = document.getElementById("acceptMedicalDisclaimer");
+  const title = document.getElementById("legalModalTitle");
+  const content = document.getElementById("legalModalContent");
 
   if (!modal || !openBtns.length) return;
 
@@ -245,22 +244,28 @@ function initMedicalDisclaimerModal() {
     document.body.classList.remove("overflow-hidden");
   };
 
- openBtns.forEach((btn) => {
-  btn.addEventListener(
-    "click",
-    window.openMedicalDisclaimerModal
-  );
+  openBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // Which button was clicked?
+    const type = btn.dataset.content;
+
+    // Get its content
+    const data = legalContent[type];
+
+    // Update the modal
+    if (data) {
+      title.textContent = data.title;
+      content.innerHTML = data.content;
+    }
+
+    // Open the modal
+    window.openMedicalDisclaimerModal();
+  });
 });
 
-  closeBtn?.addEventListener(
-    "click",
-    window.closeMedicalDisclaimerModal,
-  );
+  closeBtn?.addEventListener("click", window.closeMedicalDisclaimerModal);
 
-  acceptBtn?.addEventListener(
-    "click",
-    window.closeMedicalDisclaimerModal,
-  );
+  acceptBtn?.addEventListener("click", window.closeMedicalDisclaimerModal);
 
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
@@ -269,10 +274,7 @@ function initMedicalDisclaimerModal() {
   });
 
   document.addEventListener("keydown", (e) => {
-    if (
-      e.key === "Escape" &&
-      !modal.classList.contains("hidden")
-    ) {
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) {
       window.closeMedicalDisclaimerModal();
     }
   });
@@ -287,7 +289,6 @@ function initReportsModal() {
     "assets/images/reports/report4.jpeg",
     "assets/images/reports/report4.jpeg",
     "assets/images/reports/report4.jpeg",
-   
   ];
 
   let currentIndex = 0;
