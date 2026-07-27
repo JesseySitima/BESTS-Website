@@ -185,14 +185,16 @@ section[id="mission"] {
    7. FORM ELEMENTS
    ============================================ */
 
-input, textarea {
-  background-color: var(--bg-secondary) !important;
-  color: var(--text-primary) !important;
-  border-color: var(--border-light) !important;
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-secondary);
 }
 
-input::placeholder, textarea::placeholder {
-  color: var(--text-secondary) !important;
+/* Contact form gold placeholders */
+#responsiveContactForm input::placeholder,
+#responsiveContactForm textarea::placeholder {
+  color: var(--california-gold);
+  opacity: 0.8;
 }
 
 /* ============================================

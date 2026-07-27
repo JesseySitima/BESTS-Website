@@ -15,15 +15,17 @@ export const privacyPolicy = {
 
       <!-- 1. Introduction -->
       <section class="space-y-3">
-        <h2 class="text-xl font-bold text-dark-green flex items-center gap-2">
-          <span class="text-lg opacity-60">1.</span> Introduction
-        </h2>
-        <p>
-          BESTS Lung Function Experts (&ldquo;BESTS&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) respects your privacy. This policy explains what data we collect, how we use it, and your rights under Malawi&rsquo;s <strong>Electronic Transactions and Cyber Security Act</strong>.
-        </p>
-        <p class="bg-green-50 border-l-4 border-dark-green p-4 text-sm rounded-r-md">
-          <strong>Notice:</strong> BESTS is a technical lung function testing service that abides by Good Clinical Practices (GCP), ATS/ERS 2022 guidelines, and international standards. <strong>We do not provide medical diagnoses.</strong> Test results must be interpreted by your licensed healthcare provider.
-        </p>
+         <h2 class="text-xl font-bold text-dark-green dark:text-green-400 flex items-center gap-2">
+    <span class="text-lg opacity-60">1.</span> Introduction
+  </h2>
+
+  <p class="text-gray-700 dark:text-gray-300">
+    BESTS Lung Function Experts (&ldquo;BESTS&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) respects your privacy. This policy explains what data we collect, how we use it, and your rights under Malawi&rsquo;s <strong>Electronic Transactions and Cyber Security Act</strong>.
+  </p>
+
+  <p class="bg-green-50 dark:bg-green-900/20 border-l-4 border-dark-green dark:border-green-400 p-4 text-sm rounded-r-md text-gray-800 dark:text-gray-200">
+    <strong>Notice:</strong> BESTS is a technical lung function testing service that abides by Good Clinical Practices (GCP), ATS/ERS 2022 guidelines, and international standards. <strong>We do not provide medical diagnoses.</strong> Test results must be interpreted by your licensed healthcare provider.
+  </p>
       </section>
 
       <!-- 2. Data We Collect -->
@@ -189,7 +191,7 @@ export const privacyPolicy = {
           <span class="text-lg opacity-60">11.</span> Changes to This Policy
         </h2>
         <p>
-          We reserves the right to update this policy as necessary. When revisions occur, the &ldquo;Last updated&rdquo; date at the top of the page will be changed. Your continued use of our clinical services implies acceptance of the updated terms.
+          We reserve the right to update this policy as necessary. When revisions occur, the &ldquo;Last updated&rdquo; date at the top of the page will be changed. Your continued use of our clinical services implies acceptance of the updated terms.
         </p>
       </section>
 
