@@ -82,11 +82,9 @@ async function loadAllComponents() {
     },
   ];
 
-await Promise.all(
-  components.map((comp) =>
-    loadComponent(comp.id, comp.path)
-  )
-);
+  for (const comp of components) {
+    await loadComponent(comp.id, comp.path);
+  }
 
   // Initialize all interactive features after DOM is fully populated
   initMobileMenu();
