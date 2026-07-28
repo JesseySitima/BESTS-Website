@@ -221,22 +221,41 @@ function initBookingModal() {
   });
 }
 
+import { legalContent } from "./legal/index.js";   // adjust path if needed
+
 function initMedicalDisclaimerModal() {
   const modal = document.getElementById("medicalDisclaimerModal");
-  const openBtns = document.querySelectorAll(
-    "#medicalDisclaimerLink, .legal-link",
-  );
+  const panel = document.getElementById("legalModalPanel");
+  const openBtns = document.querySelectorAll(".legal-link, #medicalDisclaimerLink");
   const closeBtn = document.getElementById("closeMedicalDisclaimerModal");
   const acceptBtn = document.getElementById("acceptMedicalDisclaimer");
   const title = document.getElementById("legalModalTitle");
   const content = document.getElementById("legalModalContent");
 
-  if (!modal || !openBtns.length) return;
+  if (!modal || !title || !content) {
+    console.warn("Medical disclaimer modal elements not found");
+    return;
+  }
 
-  window.openMedicalDisclaimerModal = () => {
+  window.openMedicalDisclaimerModal = (type = "medical") => {
+    console.log("LEGAL MODAL OPENED", type);
+    const data = legalContent[type] || legalContent.medical;
+
+    title.textContent = data.title || "Legal Information";
+    content.innerHTML = data.html || data.content || "<p>Content not available.</p>";
+
     modal.classList.remove("hidden");
     modal.classList.add("flex");
+    console.log("Modal classes:", modal.className);
     document.body.classList.add("overflow-hidden");
+
+    // Optional: trigger animation only when opening
+    if (panel) {
+      panel.classList.remove("animate-fade-up");
+      // force reflow
+      void panel.offsetWidth;
+      panel.classList.add("animate-fade-up");
+    }
   };
 
   window.closeMedicalDisclaimerModal = () => {
@@ -246,31 +265,18 @@ function initMedicalDisclaimerModal() {
   };
 
   openBtns.forEach((btn) => {
-    btn.addEventListener("click", async () => {
-      const type = btn.dataset.content;
-
-      // Load legal content only when needed
-      const { legalContent } = await import("./legal/index.js");
-
-      const data = legalContent[type];
-
-      if (data) {
-        title.textContent = data.title;
-        content.innerHTML = data.content;
-      }
-
-      window.openMedicalDisclaimerModal();
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const type = btn.dataset.content || "medical";
+      window.openMedicalDisclaimerModal(type);
     });
   });
 
   closeBtn?.addEventListener("click", window.closeMedicalDisclaimerModal);
-
   acceptBtn?.addEventListener("click", window.closeMedicalDisclaimerModal);
 
   modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      window.closeMedicalDisclaimerModal();
-    }
+    if (e.target === modal) window.closeMedicalDisclaimerModal();
   });
 
   document.addEventListener("keydown", (e) => {
