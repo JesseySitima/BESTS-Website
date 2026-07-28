@@ -99,6 +99,8 @@ await Promise.all(
   initReportsModal();
   initMedicalDisclaimerModal();
   initMissionSlider();
+
+  revealPage();
 }
 
 function initMobileMenu() {
@@ -386,3 +388,26 @@ function initReportsModal() {
 
 // Start loading
 loadAllComponents();
+
+function revealPage(){
+
+  const loader = document.getElementById("page-loader");
+  const content = document.getElementById("page-content");
+
+
+  if(content){
+    content.classList.add("visible");
+  }
+
+
+  if(loader){
+
+    setTimeout(() => {
+
+      loader.classList.add("hidden");
+
+    }, 300);
+
+  }
+
+}
