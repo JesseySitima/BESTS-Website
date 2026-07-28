@@ -4,7 +4,6 @@ import { initContactForm } from "./contactForm.js";
 import { initSmoothScroll } from "./smoothScroll.js";
 import { initScrollAnimations } from "./scrollAnimations.js";
 import { initMissionSlider } from "./missionSlider.js";
-import { legalContent } from "./legal/index.js";
 
 function initThemeToggle() {
   // Create the toggle button
@@ -82,11 +81,9 @@ async function loadAllComponents() {
     },
   ];
 
-await Promise.all(
-  components.map((comp) =>
-    loadComponent(comp.id, comp.path)
-  )
-);
+  await Promise.all(
+    components.map((comp) => loadComponent(comp.id, comp.path)),
+  );
 
   // Initialize all interactive features after DOM is fully populated
   initMobileMenu();
@@ -249,23 +246,22 @@ function initMedicalDisclaimerModal() {
   };
 
   openBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    // Which button was clicked?
-    const type = btn.dataset.content;
+    btn.addEventListener("click", async () => {
+      const type = btn.dataset.content;
 
-    // Get its content
-    const data = legalContent[type];
+      // Load legal content only when needed
+      const { legalContent } = await import("./legal/index.js");
 
-    // Update the modal
-    if (data) {
-      title.textContent = data.title;
-      content.innerHTML = data.content;
-    }
+      const data = legalContent[type];
 
-    // Open the modal
-    window.openMedicalDisclaimerModal();
+      if (data) {
+        title.textContent = data.title;
+        content.innerHTML = data.content;
+      }
+
+      window.openMedicalDisclaimerModal();
+    });
   });
-});
 
   closeBtn?.addEventListener("click", window.closeMedicalDisclaimerModal);
 
@@ -389,25 +385,17 @@ function initReportsModal() {
 // Start loading
 loadAllComponents();
 
-function revealPage(){
-
+function revealPage() {
   const loader = document.getElementById("page-loader");
   const content = document.getElementById("page-content");
 
-
-  if(content){
+  if (content) {
     content.classList.add("visible");
   }
 
-
-  if(loader){
-
+  if (loader) {
     setTimeout(() => {
-
       loader.classList.add("hidden");
-
     }, 300);
-
   }
-
 }
