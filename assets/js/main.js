@@ -221,7 +221,7 @@ function initBookingModal() {
   });
 }
 
-import { legalContent } from "./legal/index.js";   // adjust path if needed
+
 
 function initMedicalDisclaimerModal() {
   const modal = document.getElementById("medicalDisclaimerModal");
@@ -237,26 +237,43 @@ function initMedicalDisclaimerModal() {
     return;
   }
 
-  window.openMedicalDisclaimerModal = (type = "medical") => {
-    console.log("LEGAL MODAL OPENED", type);
+  window.openMedicalDisclaimerModal = async (type = "medical") => {
+  console.log("LEGAL MODAL OPENED", type);
+
+  try {
+    // Load legal content only when needed
+    const { legalContent } = await import("./legal/index.js");
+
     const data = legalContent[type] || legalContent.medical;
 
     title.textContent = data.title || "Legal Information";
-    content.innerHTML = data.html || data.content || "<p>Content not available.</p>";
 
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
-    console.log("Modal classes:", modal.className);
-    document.body.classList.add("overflow-hidden");
+    content.innerHTML =
+      data.html ||
+      data.content ||
+      "<p>Content not available.</p>";
 
-    // Optional: trigger animation only when opening
-    if (panel) {
-      panel.classList.remove("animate-fade-up");
-      // force reflow
-      void panel.offsetWidth;
-      panel.classList.add("animate-fade-up");
-    }
-  };
+  } catch (error) {
+    console.error("Failed to load legal content:", error);
+
+    title.textContent = "Legal Information";
+    content.innerHTML =
+      "<p>Unable to load content.</p>";
+  }
+
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+
+  document.body.classList.add("overflow-hidden");
+
+  if (panel) {
+    panel.classList.remove("animate-fade-up");
+
+    void panel.offsetWidth;
+
+    panel.classList.add("animate-fade-up");
+  }
+};
 
   window.closeMedicalDisclaimerModal = () => {
     modal.classList.add("hidden");
